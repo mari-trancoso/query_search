@@ -5,10 +5,16 @@ class ArticlesController < ApplicationController
   def index
     if params[:query].present?
       Query.create(query: params[:query], user_ip: request.remote_ip)
-      @articles = Article.where('title LIKE ?', "%#{params[:query]}%").or(Article.where("author LIKE ?", "%#{params[:query]}%"))
-      .or(Article.where("body LIKE ?", "%#{params[:query]}%"))
+      @articles = Article.where('title LIKE ?', "%#{params[:query]}%")
+                         .or(Article.where('author LIKE ?', "%#{params[:query]}%"))
+                         .or(Article.where('body LIKE ?', "%#{params[:query]}%"))
     else
       @articles = Article.all
+    end
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @articles }
     end
   end
 
