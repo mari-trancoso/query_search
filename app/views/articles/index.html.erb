@@ -1,5 +1,5 @@
-<div class="bg-red-400">
-  <h1 class="text-sm font-bold text-center mb-6">Articles</h1>
+<div>
+  <h1 class="text-sm font-bold text-center mb-6 text-red-500">Articles</h1>
 
   <%= form_with url: articles_path, method: :get do |form| %>
     <%= form.text_field :query, value: params[:query], placeholder: "Search" %>
