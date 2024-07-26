@@ -1,37 +1,46 @@
-<h1>Search Analytics</h1>
+<div class="p-4 w-full flex flex-col">
+  <h1 class="text-5xl font-bold text-center mb-6 text-red-500">Search Analytics</h1>
 
-<h2>Search Queries</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Query</th>
-      <th>Count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @search_queries.each do |query, count| %>
-      <tr>
-        <td><%= query %></td>
-        <td><%= count %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="p-4 flex justify-evenly space-x-4">
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <h2 class="text-2xl font-semibold bg-gray-100 p-4">Trending Searches</h2>
+      <table class="min-w-full divide-y divide-gray-200">
+        <thead class="bg-gray-50">
+          <tr>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Query</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Count</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+          <% @search_queries.each do |query, count| %>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap"><%= query %></td>
+              <td class="px-6 py-4 whitespace-nowrap"><%= count %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
 
-<h2>Queries by IP Address</h2>
-<table>
-  <thead>
-    <tr>
-      <th>IP Address</th>
-      <th>Count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @queries_by_ip.each do |ip, count| %>
-      <tr>
-        <td><%= ip %></td>
-        <td><%= count %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <h2 class="text-2xl font-semibold bg-gray-100 p-4">Queries by IP</h2>
+      <table class="min-w-full divide-y divide-gray-200">
+        <thead class="bg-gray-50">
+          <tr>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">IP Address</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Count</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+          <% @queries_by_ip.each do |ip, count| %>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap"><%= ip %></td>
+              <td class="px-6 py-4 whitespace-nowrap"><%= count %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <%= link_to "Back to Artciles", articles_path, class:"bg-red-600 p-2 text-white rounded-md w-fit" %>
+</div>
