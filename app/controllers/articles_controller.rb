@@ -5,7 +5,8 @@ class ArticlesController < ApplicationController
   def index
     if params[:query].present?
       Query.create(query: params[:query], user_ip: request.remote_ip)
-      @articles = Article.where('title LIKE ?', "%#{params[:query]}%")
+      @articles = Article.where('title LIKE ?', "%#{params[:query]}%").or(Article.where("author LIKE ?", "%#{params[:query]}%"))
+      .or(Article.where("body LIKE ?", "%#{params[:query]}%"))
     else
       @articles = Article.all
     end
@@ -70,6 +71,6 @@ class ArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:title, :author)
+      params.require(:article).permit(:title, :author, :body)
     end
 end
