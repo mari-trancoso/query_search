@@ -1,0 +1,37 @@
+<h1>Search Analytics</h1>
+
+<h2>Search Queries</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Query</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @search_queries.each do |query, count| %>
+      <tr>
+        <td><%= query %></td>
+        <td><%= count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>Queries by IP Address</h2>
+<table>
+  <thead>
+    <tr>
+      <th>IP Address</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @queries_by_ip.each do |ip, count| %>
+      <tr>
+        <td><%= ip %></td>
+        <td><%= count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

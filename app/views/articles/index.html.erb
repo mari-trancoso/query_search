@@ -1,0 +1,19 @@
+<div class="bg-red-400">
+  <h1 class="text-sm font-bold text-center mb-6">Articles</h1>
+
+  <%= form_with url: articles_path, method: :get do |form| %>
+    <%= form.text_field :query, value: params[:query], placeholder: "Search" %>
+  <% end %>
+
+  <div id="articles">
+    <% @articles.each do |article| %>
+      <%= render article %>
+      <p>
+        <%= link_to "Show this article", article %>
+      </p>
+    <% end %>
+  </div>
+
+  <%= link_to "New article", new_article_path %>
+  <%= link_to "Analytics Search", analytics_path %>
+</div>
