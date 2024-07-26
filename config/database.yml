@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: search_query_production
-  username: search_query
-  password: <%= ENV["SEARCH_QUERY_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABSE_URL'] %>
