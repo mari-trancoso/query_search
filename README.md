@@ -17,6 +17,8 @@ This project is a Rails application that implements real-time search and collect
 ## Technologies Used
 
 - **Ruby on Rails**: Main framework for developing the application.
+  - ruby 3.3.0
+  - Rails 7.1.3.4
 - **StimulusJS**: For real-time behavior of the search box.
 - **PostgreSQL**: Database for storing queries.
 - **Heroku**: Hosting and deployment platform.
