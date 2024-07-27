@@ -20,3 +20,7 @@ This project is a Rails application that implements real-time search and collect
 - **StimulusJS**: For real-time behavior of the search box.
 - **PostgreSQL**: Database for storing queries.
 - **Heroku**: Hosting and deployment platform.
+
+## Production
+
+You can test the application in production at: https://search-queries-help-juice-5bed6a8143d6.herokuapp.com/
