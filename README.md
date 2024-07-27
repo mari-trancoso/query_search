@@ -1,24 +1,22 @@
-# README
+# Real-time Search and Analytics
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
 
-Things you may want to cover:
+This project is a Rails application that implements real-time search and collects analytics on what users are searching for. The application has two main functionalities:
 
-* Ruby version
+1. **Real-time Search**: Allows users to search for articles and displays results instantly as they type. The search is processed in real-time with a debounce mechanism to avoid recording incomplete queries.
 
-* System dependencies
+2. **Search Analytics**: Collects and displays analytics on what users are searching for, including trends and query frequencies, and stores these queries by user IP.
 
-* Configuration
+## Features
 
-* Database creation
+- **Real-time Search**: Uses a search box that updates results instantly while the user types, leveraging debounce to prevent logging incomplete queries.
+- **Query Storage**: Records complete queries in the database, ignoring incomplete or fragmented queries.
+- **Analytics and Trends**: Displays the most frequent queries and queries by IP in the analytics dashboard.
 
-* Database initialization
+## Technologies Used
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- **Ruby on Rails**: Main framework for developing the application.
+- **StimulusJS**: For real-time behavior of the search box.
+- **PostgreSQL**: Database for storing queries.
+- **Heroku**: Hosting and deployment platform.
